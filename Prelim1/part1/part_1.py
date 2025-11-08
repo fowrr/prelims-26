@@ -23,16 +23,25 @@ def part_1(size: int):
     tail = []
     ### YOUR CODE GOES HERE ###
     print(size)
-    char_list = ["|","_", "/", " ", "\\"] 
+    char_list = ["|","_", "/", " ", "\\", "."] 
     tailB_h = size + 1
     tailB_l = size * 2
-    tail_body = []
     for x in range (0, tailB_h):
         tail_bodyLine = []
         tail_bodyLine += char_list[0]
-        for y in range (0, tailB_l):
-
-    print(tail_body)
+        for y in range (0, (tailB_l-1)):
+            tail_bodyLine += char_list[1]
+            tail_bodyLine += char_list[5]
+        tail_bodyLine += char_list[1]
+        tail_bodyLine += char_list[0]
+        tail.append(tail_bodyLine)
+    for spaceNum in range(1,size+1):
+        tail_bodyLine2 = []
+        for x in range(spaceNum):
+            print()
+        print(spaceNum)
+    for line in tail:
+        print(*line, "\n")
     #test edit
 
     return tail
