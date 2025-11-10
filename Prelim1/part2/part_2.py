@@ -21,7 +21,13 @@ def part_2(w: int, h: int, l: int, a: int):
     milk = 0.0
     ### You code goes here ###
     ### Votre code va ici ###
-
-
+    import math
+    print(a)
+    milkReplacement = (4/3) * math.pi * (w/2) * (h/2) * (l/2) * (1/2)
+    if a > 10:
+        a = 10
+    milk = milkReplacement * (0.1 * a)
+    milk = round(milk,2)
 
     return milk
+part_2(10,14,50,4)
