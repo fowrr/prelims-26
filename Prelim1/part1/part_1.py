@@ -49,5 +49,7 @@ def part_1(size: int):
 
     
     #test edit
-
+    for line in tail:
+        print(line, "\n")
     return tail
+part_1(10)

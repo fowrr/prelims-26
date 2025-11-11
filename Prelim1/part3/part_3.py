@@ -19,8 +19,19 @@ def part_3(sentence: str):
     positions = []
     ### You code goes here ###
     ### Votre code va ici ###
-    
-    
-
+    letterIsChecked = False
+    for letter in word:
+        letterIsChecked = False
+        for x in range (0, len(sentence)):
+            if letterIsChecked == True:
+                continue
+            if letter in sentence:
+                if letter == sentence[x]:
+                    positions.append(x)
+                    sentence = sentence[:x] + "#" + sentence[x+1:]
+                    letterIsChecked = True
+            elif letter not in sentence:
+                positions.append(int(-1))
+                letterIsChecked = True
 
     return positions

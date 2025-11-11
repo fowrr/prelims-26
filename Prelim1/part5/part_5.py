@@ -19,8 +19,18 @@ def part_5(turns: int, board: [str]):
     final_answer = "No"
     ### You code goes here ###
     ### Votre code va ici ###
-
-
+    length = len(board)
+    foodLocations = []
+    for j in range (0, length):
+        for i in range (0, length):
+            if board[j][i] == ".":
+                food = (j,i)
+                foodLocations.append(food)
+            if board[j][i] == "x":
+                platypus = (j,i)
+    
+    print(foodLocations)
 
 
     return final_answer
+part_5(14, [["#","_","."], ["x", "_","_"], ["_",".","_"]])
