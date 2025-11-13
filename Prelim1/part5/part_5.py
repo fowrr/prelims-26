@@ -19,6 +19,8 @@ def part_5(turns: int, board: [str]):
     final_answer = "No"
     ### You code goes here ###
     ### Votre code va ici ###
+
+    
     length = len(board)
     foodLocations = []
     for j in range (0, length):
@@ -29,8 +31,37 @@ def part_5(turns: int, board: [str]):
             if board[j][i] == "x":
                 platypus = (j,i)
     
-    print(foodLocations)
+    listPossibilities = []
+    #def checkForFood(possible: bool, food: (int, int)):
+    for foodCoordDig in range (len(foodLocations)):
+        foodCoord = foodLocations[foodCoordDig]
+        dist = abs(foodCoord[0] - platypus[0]) + abs(foodCoord[1] - platypus[1])
+        if dist < 4:
+            listPossibilities.append((foodCoord,dist))
+        #if foodCoordDig == len(foodLocations):
+    print(listPossibilities)
+    
+
+
+    #print(foodLocations)
 
 
     return final_answer
-part_5(14, [["#","_","."], ["x", "_","_"], ["_",".","_"]])
+part_5(14, [
+        "___.________.___",
+        "________________",
+        "_______________.",
+        "____.__.._____..",
+        "____.____.._____",
+        "__.____________x",
+        "__._____________",
+        "__________._____",
+        "________________",
+        "._____._________",
+        "________________",
+        "____.___._______",
+        "________________",
+        "______________._",
+        "______._________",
+        "___.___.________",
+    ])
